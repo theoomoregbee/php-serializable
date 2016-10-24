@@ -265,6 +265,7 @@ $user->setEmail("theo4u@ymail.com");
 $user->setPassword("1111");
 
 //lets serialize our object now
+header('Content-type: application/json');
 echo json_encode(SerializeMe::serialize($user));
 
 ?>
