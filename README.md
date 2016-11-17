@@ -24,7 +24,7 @@ to use it call the static method called serilaizable which will take in the obec
 which will lead to this output 
 `{"firstname":"Theophilus","lastname":"Omoregbee","states":[{"name":"Edo state","code":"ED"},{"name":"Lagos State","code":"LG"}],"country":{"name":"Nigeria","code":"NG"},"dateCreated":1477351778,"roles":["ADMIN","DB MANAGER"],"email":"theo4u@ymail.com","password":"b59c67bf196a4758191e42f76670ceba"}`
 
-![Response Json](https://github.com/theo4u/php-serializable/raw/master/serializable.tiff)
+![Response Json](https://github.com/theo4u/php-serializable/raw/master/serializable.png)
 
 
 ## Contributions 
