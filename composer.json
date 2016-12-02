@@ -1,0 +1,21 @@
+{
+    "name": "theophy/php-serializable",
+    "description": "this helps to serialize php object",
+    "type": "library",
+    "license": "GPL-3.0",
+    "authors": [
+        {
+            "name": "theophy",
+            "email": "theo4u@ymail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=5.4.0"
+    },
+    "autoload": {
+        "psr-0": {
+            "Serialize": "/"
+        }
+    }
+}
