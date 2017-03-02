@@ -28,4 +28,4 @@ which will lead to this output
 
 
 ## Contributions 
-Allowed contributions to make it faster and re-usable
+Allow contributions to make it faster and re-usable
