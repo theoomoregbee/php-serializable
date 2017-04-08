@@ -9,12 +9,12 @@
 include "Serialize.php";
 
 /**
-* this handles the parents of the user
-*/
+ * this handles the parents of the user
+ */
 class ParentTest
 {
-	protected $email;
-	protected $password;
+    protected $email;
+    protected $password;
 
     /**
      * @return mixed
@@ -49,7 +49,8 @@ class ParentTest
     }
 }
 
-class State{
+class State
+{
     private $name;
     private $code;
 
@@ -92,9 +93,11 @@ class State{
     }
 }
 
-class Country{
+class Country
+{
     private $name;
     private $code;
+    private $states = array();
 
     function __construct($name, $code)
     {
@@ -134,26 +137,50 @@ class Country{
         $this->code = $code;
     }
 
+    /**
+     * @return State[]
+     */
+    public function getStates()
+    {
+        return $this->states;
+    }
+
+    /**
+     * @param State[] $states
+     */
+    public function setStates($states)
+    {
+        $this->states = $states;
+    }
+
+    /**
+     * this is used to add state to our array if states
+     * @param State $state
+     */
+    public function addState(State $state)
+    {
+        $this->states[] = $state;
+    }
 
 }
 
 /**
-* Create a dummy user
-*/
+ * Create a dummy user
+ */
 class User extends ParentTest
 {
     private $firstname;
     private $lastname;
-    private $states=array();
+    private $states = array();
     private $country;
     private $dateCreated;
     private $roles = array();
 
-	
-	function __construct()
-	{
+
+    function __construct()
+    {
         $this->dateCreated = time();
-	}
+    }
 
     /**
      * @return mixed
@@ -186,13 +213,16 @@ class User extends ParentTest
     {
         $this->lastname = $lastname;
     }
+
     /**
      * @return mixed
      */
     public function getStates()
     {
         return $this->states;
-    }/**
+    }
+
+    /**
      * @param mixed $states
      */
     public function setStates($states)
@@ -202,7 +232,7 @@ class User extends ParentTest
 
 
     /**
-     * @return mixed
+     * @return Country
      */
     public function getCountry()
     {
@@ -257,9 +287,11 @@ $user->setFirstname("Theophilus");
 $user->setLastname("Omoregbee");
 
 $user->setStates(array(new State("Edo state", "ED"), new State("Lagos State", "LG")));
-$user->setCountry(new Country("Nigeria","NG"));
+$user->setCountry(new Country("Nigeria", "NG"));
 
-$user->setRoles(array("ADMIN","DB MANAGER"));
+$user->getCountry()->setStates($user->getStates());
+
+$user->setRoles(array("ADMIN", "DB MANAGER"));
 
 $user->setEmail("theo4u@ymail.com");
 $user->setPassword("1111");
